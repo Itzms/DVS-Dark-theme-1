@@ -1,0 +1,67 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>E-Voting System</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="{% static 'default.css' %}" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+    <div class="logo">E-Voting</div>
+
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="admin.html">Admin Login</a>
+        <a href="vote.html">Cast Your Vote</a>
+    </div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+    <h1>Secure Digital Voting</h1>
+    <p>Reliable, transparent and blockchain-powered voting infrastructure.</p>
+
+    <a href="{% url 'Vote' %}">
+        <button class="btn-primary">Cast Vote</button>
+    </a>
+</section>
+
+<!-- MAIN -->
+<div class="card">
+
+    <div class="dynamic-data">
+        {{ data|safe }}
+    </div>
+
+    <div class="grid">
+
+        <img src="{% static 'images/images.jpg' %}" class="banner">
+
+        <div class="content">
+            <h3>System Transparency</h3>
+            <p>
+                This platform leverages blockchain technology to ensure that every vote is secure,
+                verifiable, and tamper-proof. Designed for trust and transparency.
+            </p>
+        </div>
+
+    </div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+    © 2026 Secure Voting System
+</div>
+
+</body>
+</html>
